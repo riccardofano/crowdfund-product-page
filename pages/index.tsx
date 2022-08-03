@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
+import Header from "../components/Header";
+
 // Logos
-import logo from "../public/images/logo.svg";
 import mastercraft from "../public/images/logo-mastercraft.svg";
 
 // Icons
-import openMenu from "../public/images/icon-hamburger.svg";
 import bookmark from "../public/images/icon-bookmark.svg";
 
 const Home: NextPage = () => {
@@ -19,24 +19,7 @@ const Home: NextPage = () => {
         <link rel="image/png" href="/favicon.png" />
       </Head>
 
-      <header className="hero | min-h-[300px]">
-        <div className="relative pt-8 pb-9 mx-6">
-          <div className="flex justify-between">
-            <a href="#">
-              <Image src={logo} alt="" />
-            </a>
-            <button>
-              <Image src={openMenu} alt="Open menu" />
-            </button>
-          </div>
-
-          <ul className="mobile-menu | md:hidden hidden absolute top-full w-full divide-y rounded-lg font-bold bg-white">
-            <li className="p-4">About</li>
-            <li className="p-4">Discover</li>
-            <li className="p-4">Get Started</li>
-          </ul>
-        </div>
-      </header>
+      <Header />
 
       <main className="-mt-14 mx-6 pb-16 grid gap-4 rounded-lg text-sm text-gray-500">
         <section className="card | pt-0 pb-10 relative flex flex-col items-center text-center">
