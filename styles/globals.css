@@ -33,6 +33,30 @@
     @apply mt-6 leading-relaxed;
   }
 
+  .button {
+    @apply font-bold rounded-full bg-cyan-400 text-white disabled:bg-gray-400 hover:bg-cyan-500;
+  }
+
+  button .bookmark circle {
+    @apply fill-[#2F2F2F];
+  }
+  button .bookmark path {
+    @apply fill-[#B1B1B1];
+  }
+  button:hover .bookmark circle {
+    @apply opacity-70;
+  }
+
+  button[data-checked="true"] span {
+    @apply text-cyan-500;
+  }
+  button[data-checked="true"] .bookmark circle {
+    @apply fill-cyan-500;
+  }
+  button[data-checked="true"] .bookmark path {
+    @apply fill-white;
+  }
+
   .no-scroll {
     @apply fixed overflow-hidden;
   }

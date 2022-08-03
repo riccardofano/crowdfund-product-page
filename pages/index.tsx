@@ -1,15 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
 import Header from "../components/Header";
+import Heading from "../components/Heading";
 import Pledge from "../components/Pledge";
-
-// Logos
-import mastercraft from "../public/images/logo-mastercraft.svg";
-
-// Icons
-import bookmark from "../public/images/icon-bookmark.svg";
 
 const Home: NextPage = () => {
   return (
@@ -23,27 +17,7 @@ const Home: NextPage = () => {
       <Header />
 
       <main className="md:mx-auto md:max-w-[730px] md:-mt-[5.75rem] -mt-14 mx-6 pb-16 grid gap-4 rounded-lg md:text-base text-sm text-gray-500">
-        <section className="card | pt-0 pb-10 relative flex flex-col items-center text-center">
-          <div className="absolute -translate-y-1/2">
-            <Image src={mastercraft} alt="" />
-          </div>
-          <h1 className="mt-14 text-[1.35rem] leading-none font-bold text-black">Mastercraft Bamboo Monitor Riser</h1>
-          <p className="mt-4 leading-relaxed">A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
-
-          <div className="mt-8 w-full flex items-stretch justify-between gap-2">
-            <button className="md:px-10 md:flex-grow-0 flex-grow rounded-full font-bold text-white bg-cyan-400">
-              Back this project
-            </button>
-            <div>
-              <button className="flex items-stretch">
-                <Image src={bookmark} alt="Bookmark project" />
-                <span className="md:flex hidden pl-16 pr-8 -ml-12 items-center leading-none rounded-full font-bold bg-gray-200">
-                  Bookmark
-                </span>
-              </button>
-            </div>
-          </div>
-        </section>
+        <Heading />
 
         <section className="card | md:text-left text-center">
           <div className="md:flex md:align-center md:gap-12 md:mb-8">
@@ -82,7 +56,7 @@ const Home: NextPage = () => {
           <Pledge
             title="Bamboo Stand"
             minimum={25}
-            description="You get an ergonomic stand made of natural bamboo. You&rsquo;ve helped us launch our promotional campaign, and you&rsquo;ll be added to a special Backer member list."
+            description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
             remaining={101}
           />
 

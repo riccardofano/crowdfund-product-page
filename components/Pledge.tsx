@@ -22,12 +22,7 @@ function Pledge({ title, minimum, description, remaining }: PledgeProps) {
           left
         </p>
 
-        <button
-          disabled={disabled}
-          className={`${
-            disabled ? "bg-gray-400" : "bg-cyan-400"
-          } md:m-0 mt-6 py-3 px-8 rounded-full font-bold text-white`}
-        >
+        <button disabled={disabled} className="button | md:m-0 mt-6 py-3 px-8">
           {disabled ? "Out of Stock" : "Select Reward"}
         </button>
       </div>
