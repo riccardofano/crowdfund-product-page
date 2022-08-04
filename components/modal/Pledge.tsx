@@ -22,27 +22,34 @@ function Pledge({ id, title, description, minimum, remaining, selected, onChange
         isSelected ? "border-2 border-cyan-400" : "border border-gray-200"
       }`}
     >
-      <div className="grid gap-4 m-4">
-        <label className="flex items-center font-bold text-black">
-          <input
-            className="mr-2 font-normal text-gray-400"
-            name="pledge"
-            type="radio"
-            id={id}
-            value={id}
-            checked={isSelected}
-            onChange={onChange}
-            disabled={disabled}
-            required
-          />
+      <div
+        className={`${
+          remaining === undefined ? "md:pledge-area-empty-md pledge-area-empty" : "md:pledge-area-md pledge-area"
+        } md:items-start items-center grid gap-4 md:m-8 m-4`}
+      >
+        <input
+          className="a-radio md:mt-[0.35rem] mr-2 cursor-pointer disabled:cursor-default font-normal text-gray-400"
+          name="pledge"
+          type="radio"
+          id={id}
+          value={id}
+          checked={isSelected}
+          onChange={onChange}
+          disabled={disabled}
+          required
+        />
+        <label
+          className={`${disabled ? "cursor-default" : "cursor-pointer"} a-title flex items-center font-bold text-black`}
+          htmlFor={id}
+        >
           <div>
             {title}
             {minimum && <span className="block font-normal text-cyan-400">Pledge ${minimum} or more</span>}
           </div>
         </label>
-        <p>{description}</p>
+        <p className="a-description leading-relaxed">{description}</p>
         {remaining !== undefined && (
-          <p className="flex gap-2 items-center">
+          <p className="a-remaining flex gap-2 items-center">
             <span className="text-lg font-bold text-black">{remaining}</span>
             left
           </p>
@@ -50,7 +57,7 @@ function Pledge({ id, title, description, minimum, remaining, selected, onChange
       </div>
 
       {isSelected && (remaining ?? 1) > 0 && (
-        <div className="m-4 text-center border-t">
+        <div className="md:flex md:justify-between md:m-8 m-4 text-center border-t">
           <p className="mt-6">Enter your pledge</p>
           <div className="mt-4 grid grid-cols-2 justify-between gap-4 h-12">
             <label className="px-4 flex items-center gap-2 rounded-full border border-gray-200 text-gray-300">

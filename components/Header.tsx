@@ -36,13 +36,13 @@ function Header() {
             open ? "absolute z-50 top-full w-full divide-y rounded-lg font-bold bg-white" : "hidden"
           }`}
         >
-          <li className="p-4">
+          <li className="p-4 hover:underline">
             <a href="#">About</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:underline">
             <a href="#">Discover</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:underline">
             <a href="#">Get Started</a>
           </li>
         </ul>

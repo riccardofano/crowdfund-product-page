@@ -61,7 +61,44 @@
     background-color: hsl(0, 0%, 0%, 0.4);
   }
 
+  .pledge-area {
+    grid-template-columns: min-content 1fr;
+    grid-template-areas:
+      "radio title"
+      "description description"
+      "remaining remaining";
+  }
+  .pledge-area-empty {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "radio title"
+      "description description";
+  }
+  .pledge-area-md {
+    grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas: "radio title remaining" "radio description description";
+  }
+  .pledge-area-empty-md {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas: "radio title title" "radio description description";
+  }
+  .a-radio {
+    grid-area: radio;
+  }
+  .a-title {
+    grid-area: title;
+  }
+  .a-remaining {
+    grid-area: remaining;
+  }
+  .a-description {
+    grid-area: description;
+  }
+
   .no-scroll {
-    @apply fixed overflow-hidden;
+    @apply overflow-hidden;
   }
 }

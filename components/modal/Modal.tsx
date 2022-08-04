@@ -25,7 +25,7 @@ function Modal({ close, chosen }: ModalProps) {
 
   return (
     <div className="overlay | fixed inset-0 overflow-y-scroll">
-      <div className="mt-36 mb-16 w-full px-6">
+      <div className="md:mx-auto md:p-0 md:max-w-[730px] md:w-auto mt-36 mb-16 w-full px-6">
         {submitted ? (
           <div className="grid justify-items-center text-center px-6 py-10 gap-4 rounded-lg bg-white">
             <Image src={successIcon} alt="" />
