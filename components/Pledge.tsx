@@ -3,9 +3,10 @@ interface PledgeProps {
   minimum: number;
   description: string;
   remaining: number;
+  onClick: () => void;
 }
 
-function Pledge({ title, minimum, description, remaining }: PledgeProps) {
+function Pledge({ title, minimum, description, remaining, onClick }: PledgeProps) {
   const disabled = remaining < 1;
 
   return (
@@ -22,7 +23,7 @@ function Pledge({ title, minimum, description, remaining }: PledgeProps) {
           left
         </p>
 
-        <button disabled={disabled} className="button | md:m-0 mt-6 py-3 px-8">
+        <button disabled={disabled} className="button | md:m-0 mt-6 py-3 px-8" onClick={onClick}>
           {disabled ? "Out of Stock" : "Select Reward"}
         </button>
       </div>

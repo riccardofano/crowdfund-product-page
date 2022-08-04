@@ -3,7 +3,11 @@ import Image from "next/image";
 
 import mastercraft from "../public/images/logo-mastercraft.svg";
 
-function Heading() {
+interface HeadingProps {
+  onClick: () => void;
+}
+
+function Heading({ onClick }: HeadingProps) {
   const [bookmarked, setBookmarked] = useState(false);
 
   const toggleBookmarked = () => {
@@ -19,7 +23,9 @@ function Heading() {
       <p className="mt-4 leading-relaxed">A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
 
       <div className="mt-8 w-full flex items-stretch justify-between gap-2">
-        <button className="button | md:px-10 md:flex-grow-0 flex-grow">Back this project</button>
+        <button className="button | md:px-10 md:flex-grow-0 flex-grow" onClick={onClick}>
+          Back this project
+        </button>
         <div>
           <button className="flex flex-row-reverse items-stretch" onClick={toggleBookmarked} data-checked={bookmarked}>
             <span className="md:flex hidden pl-16 pr-8 -ml-12 items-center leading-none rounded-full font-bold bg-gray-150">

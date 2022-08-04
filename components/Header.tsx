@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
+
+import ClientOnlyPortal from "./ClientOnlyPortal";
 
 import logo from "../public/images/logo.svg";
 import openMenu from "../public/images/icon-hamburger.svg";
 import closeMenu from "../public/images/icon-close-menu.svg";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import ClientOnlyPortal from "./ClientOnlyPortal";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -28,11 +28,11 @@ function Header() {
         className={`md:mx-auto md:max-w-[1110px] pt-8 pb-9 mx-6 flex justify-between relative ${open ? "z-40" : ""}`}
       >
         <a href="#">
-          <Image src={logo} alt="" />
+          <Image src={logo} alt="Crowdfund" />
         </a>
 
         <ul
-          className={`md:flex md:text-white ${
+          className={`md:flex md:text-white text-black ${
             open ? "absolute z-50 top-full w-full divide-y rounded-lg font-bold bg-white" : "hidden"
           }`}
         >

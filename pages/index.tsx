@@ -1,13 +1,31 @@
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 
 import Header from "../components/Header";
 import Heading from "../components/Heading";
+import Modal from "../components/modal/Modal";
 import Pledge from "../components/Pledge";
 
 const Home: NextPage = () => {
+  const [modalOpen, setModalOpen] = useState(true);
+  const [chosen, setChosen] = useState("2");
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [modalOpen]);
+
+  const handleModalOpening = (id: string) => {
+    setChosen(id);
+    setModalOpen(true);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen md:text-base text-sm text-gray-500 bg-gray-100">
       <Head>
         <title>Crowdfunding product page</title>
         <meta name="description" content="Frontend Mentor challenge | Crowdfunding product page" />
@@ -16,8 +34,8 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <main className="md:mx-auto md:max-w-[730px] md:-mt-[5.75rem] -mt-14 mx-6 pb-16 grid gap-4 rounded-lg md:text-base text-sm text-gray-500">
-        <Heading />
+      <main className="md:mx-auto md:max-w-[730px] md:-mt-[5.75rem] -mt-14 mx-6 pb-16 grid gap-4 rounded-lg ">
+        <Heading onClick={() => handleModalOpening("1")} />
 
         <section className="card | md:text-left text-center">
           <div className="md:flex md:align-center md:gap-12 md:mb-8">
@@ -58,6 +76,7 @@ const Home: NextPage = () => {
             minimum={25}
             description="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list."
             remaining={101}
+            onClick={() => handleModalOpening("2")}
           />
 
           <Pledge
@@ -65,6 +84,7 @@ const Home: NextPage = () => {
             minimum={75}
             description="You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
             remaining={64}
+            onClick={() => handleModalOpening("3")}
           />
 
           <Pledge
@@ -72,9 +92,12 @@ const Home: NextPage = () => {
             minimum={200}
             description="You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included."
             remaining={0}
+            onClick={() => handleModalOpening("4")}
           />
         </section>
       </main>
+
+      {modalOpen && <Modal chosen={chosen} close={() => setModalOpen(false)} />}
     </div>
   );
 };
