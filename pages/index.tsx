@@ -8,8 +8,8 @@ import Modal from "../components/modal/Modal";
 import Pledge from "../components/Pledge";
 
 const Home: NextPage = () => {
-  const [modalOpen, setModalOpen] = useState(true);
-  const [chosen, setChosen] = useState("2");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [chosen, setChosen] = useState("1");
 
   useEffect(() => {
     if (modalOpen) {
