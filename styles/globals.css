@@ -7,6 +7,8 @@
 @layer base {
   body {
     font-family: "Commissioner", sans-serif;
+    /* just a bit darker than cyan-400 to give us white outlines */
+    accent-color: hsl(175.6, 51.4%, 42%);
   }
 }
 
