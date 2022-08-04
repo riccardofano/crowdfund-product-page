@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/crowdfund-product-page-with-nextjs-and-tailwindcss-Ry-TmwAdkS
+- Live Site URL: [crowdfund-product-page-rf.netlify.app](https://crowdfund-product-page-rf.netlify.app)
 
 ## My process
 
